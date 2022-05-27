@@ -5,8 +5,8 @@ SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 GroupAdd, roz, ahk_exe Discord.exe
 GroupAdd, roz, ahk_exe Messenger.exe
 #IfWinActive ahk_exe Discord.exe
-:*::s:::sob:
-:*::pen:::pensive:
+    :*::s:::sob:
+    :*::pen:::pensive:
 #IfWinActive
 ^m::
 Pause:: ;Pause Break button is my chosen hotkey
@@ -39,29 +39,47 @@ RemoveMuteMicTooltip:
     SetTimer, RemoveMuteMicTooltip, Off
     ToolTip
 return
+F1::
+    WinGetTitle, Title, A
+    MinimazeAndStopVid()
+    Run, Firefox.exe
+    WinWait, Mozilla Firefox
+    WinMaximize ; Use the window found by WinWait.
+    KeyWait, F2, D
+    WinClose, Mozilla Firefox
+    WinActivate, Title
+    MinimazeAndStopVid()
+    return
+return
+MinimazeAndStopVid()
+{
 
-#IfWinActive ahk_group roz
-:*:wgl::w ogóle
+    SendInput, {f}
+    SendInput, {Space}
+    Sleep, 500
+    return
+}
+    :*:wgl::w ogóle
 
-        :*:nmzc::Nie ma za co
-        :*:spk::spoko
-        :*:dzk::dzięki
-        :*:nwm::nie wiem
-        :*:czm::czemu
-        :*:kk::okok
-        :*:mg::mogę
-        :*:nmg::nie mogę
-        :*:wsm::w sumie
+    :*:nmzc::Nie ma za co
+    :*:spk::spoko
+    :*:dzk::dzięki
+    :*:nwm::nie wiem
+    :*:czm::czemu
+    :*:kk::okok
+    :*:mg::mogę
+    :*:nmg::nie mogę
+    :*:wsm::w sumie
 
 :*:XD::
-Random, num, 0, 3
-if (num = 0){
-    Send, lol
-}
-else if (num = 1){
-    Send, lmao
-}
-Else{
-    Send, lmfao
-}
+    Random, num, 0, 3
+    if (num = 0){
+        Send, lol
+    }
+    else if (num = 1){
+        Send, lmao
+    }
+    Else{
+        Send, lmfao
+    }
 return
