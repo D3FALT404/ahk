@@ -42,12 +42,16 @@ return
 F1::
     WinGetTitle, Title, A
     MinimazeAndStopVid()
+    WinMinimize, %Title%
     Run, Firefox.exe
     WinWait, Mozilla Firefox
     WinMaximize ; Use the window found by WinWait.
-    KeyWait, F2, D
-    WinClose, Mozilla Firefox
-    WinActivate, Title
+    KeyWait, Shift, D
+    if WinExist("Mozilla Firefox"){
+   WinClose, Mozilla Firefox
+
+    }
+    WinActivate, %Title%
     MinimazeAndStopVid()
     return
 return
@@ -56,7 +60,7 @@ MinimazeAndStopVid()
 
     SendInput, {f}
     SendInput, {Space}
-    Sleep, 500
+    ;Sleep, 500
     return
 }
     :*:wgl::w ogóle
