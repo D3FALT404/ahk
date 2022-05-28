@@ -1,12 +1,9 @@
-#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 GroupAdd, roz, ahk_exe Discord.exe
 GroupAdd, roz, ahk_exe Messenger.exe
-#IfWinActive ahk_exe Discord.exe
-    :*::s:::sob:
-    :*::pen:::pensive:
 #IfWinActive
 ^m::
 Pause:: ;Pause Break button is my chosen hotkey
@@ -48,12 +45,12 @@ F1::
     WinMaximize ; Use the window found by WinWait.
     KeyWait, Shift, D
     if WinExist("Mozilla Firefox"){
-   WinClose, Mozilla Firefox
+        WinClose, Mozilla Firefox
 
     }
     WinActivate, %Title%
     MinimazeAndStopVid()
-    return
+return
 return
 MinimazeAndStopVid()
 {
@@ -61,20 +58,22 @@ MinimazeAndStopVid()
     SendInput, {f}
     SendInput, {Space}
     ;Sleep, 500
-    return
+return
 }
-    :*:wgl::w ogóle
+:*:wgl::w ogóle
 
-    :*:nmzc::Nie ma za co
-    :*:spk::spoko
-    :*:dzk::dzięki
-    :*:nwm::nie wiem
-    :*:czm::czemu
-    :*:kk::okok
-    :*:mg::mogę
-    :*:nmg::nie mogę
-    :*:wsm::w sumie
-
+:*:nmzc::Nie ma za co
+:*:spk::spoko
+:*:dzk::dzięki
+:*:nwm::nie wiem
+:*:czm::czemu
+:*:kk::okok
+:*:mg::mogę
+:*:nmg::nie mogę
+:*:wsm::w sumie
+:*::so:::😭
+:*:skull::💀
+:*::pe::😔
 :*:XD::
     Random, num, 0, 3
     if (num = 0){
