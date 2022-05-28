@@ -71,7 +71,7 @@ return
 :*:mg::mogę
 :*:nmg::nie mogę
 :*:wsm::w sumie
-:*::so:::😭
+:*::so::😭
 :*:skull::💀
 :*::pe::😔
 :*:XD::
